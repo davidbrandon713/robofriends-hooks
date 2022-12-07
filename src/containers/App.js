@@ -14,7 +14,7 @@ function App() {
       .then(response=> response.json())
       .then(users => {setRobots(users)});
       console.log(count)
-  }, [count]) // only run if count changes
+  }, [count]) // only run if count changes.
 
   const onSearchChange = (event) => {
     setSearchfield(event.target.value)
@@ -23,6 +23,7 @@ function App() {
   const filteredRobots = robots.filter(robot =>{
     return robot.name.toLowerCase().includes(searchfield.toLowerCase());
   })
+
   return !robots.length ?
     <h1>Loading</h1> :
     (
